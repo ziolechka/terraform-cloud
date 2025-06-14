@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
 sudo apt-get update
 sudo apt-get install -y apache2
 myip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
-echo "<h2>${var.server_name}-WebServer with IP: $myip</h2><br>Build by Terraform!"  >  /var/www/html/index.html
+echo "<h2>${var.server_name}-Server with IP: $myip</h2><br>Build by Terraform!"  >  /var/www/html/index.html
 systemctl start apache2
 systemctl enable apache2
 EOF
