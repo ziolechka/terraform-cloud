@@ -7,7 +7,7 @@ data "aws_ami" "ubuntu_latest" {
   }
 }
 resource "aws_instance" "web" {
-  ami                    = data.aws_ami.ubuntu-latest.id
+  ami                    = data.aws_ami.ubuntu_latest.id
   instance_type          = var.server_size
   vpc_security_group_ids = [aws_security_group.web.id]
   user_data              = <<EOF
